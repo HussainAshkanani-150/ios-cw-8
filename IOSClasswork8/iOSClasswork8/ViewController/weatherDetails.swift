@@ -20,11 +20,13 @@ class weatherDetails: UIViewController {
     
     
     @IBOutlet weak var maxTemp: UILabel!
+    @IBOutlet weak var cityname2: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
        getWeatherDetails()
+        remarkablePlaceImageVIew.image = city.remarkablePlaceImage()
     }
     
     
@@ -46,6 +48,8 @@ class weatherDetails: UIViewController {
             let maxtempC = (maxtempK - 272.15).rounded(.down)
             self.maxTemp.text = "\(maxtempC)°C"
             
+            let cityname = self.city.name
+            self.cityname2.text = "\(cityname)"
         }
     }
     
